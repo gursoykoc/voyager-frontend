@@ -148,7 +148,6 @@ class VoyagerFrontendServiceProvider extends ServiceProvider
         // Register our commands
         $this->commands([
             ImportCommand::class,
-            Commands\GenerateSitemap::class,
             Commands\GenerateSearchIndices::class
         ]);
 
@@ -157,7 +156,6 @@ class VoyagerFrontendServiceProvider extends ServiceProvider
             $schedule = $this->app->make(Schedule::class);
 
             $schedule->command('voyager-frontend:clean-thumbnails')->dailyAt('13:00');
-            $schedule->command('voyager-frontend:generate-sitemap')->dailyAt('13:15');
             $schedule->command('voyager-frontend:generate-search-indices')->dailyAt('13:30');
         });
     }
