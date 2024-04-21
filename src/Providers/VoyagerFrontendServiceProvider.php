@@ -100,19 +100,11 @@ class VoyagerFrontendServiceProvider extends ServiceProvider
      */
     protected function strapViews(Request $request)
     {
-        // Provide user data to all views
-        View::composer('*', function ($view) use ($request) {
-            $view->with('currentUser', \Auth::user());
-            $view->with('breadcrumbs', PageController::getBreadcrumbs($request));
-        });
-
         // Front-end views can be used like:
         //  - @include('voyager-frontend::partials.meta') OR
         $this->loadViewsFrom(self::PACKAGE_DIR . 'resources/views', 'voyager-frontend');
         $this->loadViewsFrom(self::PACKAGE_DIR . 'resources/views/vendor/voyager', 'voyager');
 
-        // Use our own paginator view
-        Paginator::defaultView('voyager-frontend::partials.pagination');
     }
 
     /**
