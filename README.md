@@ -1,5 +1,3 @@
-**This repository is no longer actively maintained**
-
 # Voyager Frontend
 
 ![Voyager Frontend Screenshot](/readme-intro.jpg)
@@ -16,7 +14,7 @@ Built by [Pivotal Agency](https://pivotal.agency/).
 
 ## Prerequisites
 
-- PHP >= 7.1.3
+- PHP >= 8.0.2
     - PHP extension `sqlite3` (required for `teamtnt/tntsearch`)
 - Node & NPM
 - Composer
