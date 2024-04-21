@@ -31,10 +31,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/gursoykoc/voyager-pages"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/gursoykoc/voyager-forms"
         }
     ],
     "autoload": {

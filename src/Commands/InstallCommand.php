@@ -56,9 +56,6 @@ class InstallCommand extends Command
      */
     public function handle(Filesystem $filesystem)
     {
-        // Clean Up
-        $this->info('Deleting Laravel\'s default assets, to make way for ours');
-        (new Filesystem)->deleteDirectory(resource_path('assets', true));
 
         $this->info('Remove default welcome page');
         (new Filesystem)->delete(resource_path('views/welcome.blade.php'));
@@ -73,11 +70,6 @@ class InstallCommand extends Command
 
 
         // Use our files
-        $this->info('Copying authentication views to main project');
-        (new Filesystem)->copyDirectory(
-            __DIR__ . '/../../stubs/views', resource_path('views')
-        );
-
         $this->info('Copying our webpack.mix.js to the project root');
         (new Filesystem)->copy(
             __DIR__ . '/../../webpack.mix.js', resource_path('../webpack.mix.js')
