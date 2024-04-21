@@ -22,8 +22,7 @@ return [
         'searchBoolean' => env('TNTSEARCH_BOOLEAN', false),
 
         'searchableModels' => [
-            '\Pvtl\VoyagerFrontend\Page',
-            '\Pvtl\VoyagerFrontend\BlogPost',
+            '\Pvtl\VoyagerFrontend\Page'
         ],
     ],
 ];

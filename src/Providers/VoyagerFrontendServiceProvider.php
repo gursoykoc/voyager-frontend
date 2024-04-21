@@ -79,7 +79,7 @@ class VoyagerFrontendServiceProvider extends ServiceProvider
         // Pull default web routes
         $this->loadRoutesFrom(base_path('/routes/web.php'));
 
-        // Then add our Pages and Posts Routes
+        // Then add our Pages Routes
         $this->loadRoutesFrom(self::PACKAGE_DIR . 'routes/web.php');
     }
 
@@ -108,7 +108,6 @@ class VoyagerFrontendServiceProvider extends ServiceProvider
 
         // Front-end views can be used like:
         //  - @include('voyager-frontend::partials.meta') OR
-        //  - view('voyager-frontend::modules/posts/post');
         $this->loadViewsFrom(self::PACKAGE_DIR . 'resources/views', 'voyager-frontend');
         $this->loadViewsFrom(self::PACKAGE_DIR . 'resources/views/vendor/voyager', 'voyager');
 

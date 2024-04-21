@@ -18,7 +18,6 @@ class VoyagerFrontendDatabaseSeeder extends Seeder
     {
         $this->seed('VoyagerFrontendPagesDataTypesTableSeeder');
         $this->seed('VoyagerFrontendPagesDataRowsTableSeeder');
-        $this->seed('VoyagerFrontendBlogDataTypesTableSeeder');
         $this->seed('VoyagerFrontendMenuDataRowsTableSeeder');
     }
 }
