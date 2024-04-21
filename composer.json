@@ -22,9 +22,9 @@
         "teamtnt/laravel-scout-tntsearch-driver": "^12.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.0",
+        "phpunit/phpunit": "^10.1",
         "orchestra/testbench": "^7.1",
-        "illuminated/testing-tools": "^9.0"
+        "illuminated/testing-tools": "^10.0"
     },
     "repositories": [
         {
