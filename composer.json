@@ -20,7 +20,6 @@
         "pvtl/voyager-pages": "^0.2.13",
         "pvtl/voyager-blog": "^0.2.10",
         "tcg/voyager": "^1.6.dev",
-        "spatie/laravel-sitemap": "^6.1",
         "teamtnt/laravel-scout-tntsearch-driver": "^11.6"
     },
     "require-dev": {
@@ -68,8 +67,7 @@
             "@php artisan voyager-frontend:install"
         ],
         "post-autoload-dump": [
-            "@php artisan vendor:publish --provider=Laravel\\Scout\\ScoutServiceProvider",
-            "@php artisan vendor:publish --provider=Spatie\\Sitemap\\SitemapServiceProvider --tag=config"
+            "@php artisan vendor:publish --provider=Laravel\\Scout\\ScoutServiceProvider"
         ]
     }
 }
