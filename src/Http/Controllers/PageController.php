@@ -2,13 +2,14 @@
 
 namespace Pvtl\VoyagerFrontend\Http\Controllers;
 
-use Pvtl\VoyagerPages\Page;
+use Pvtl\VoyagerFrontend\Page;
 use Pvtl\VoyagerFrontend\Helpers\Layouts;
 use Pvtl\VoyagerFrontend\Traits\Breadcrumbs;
 use Pvtl\VoyagerFrontend\Helpers\BladeCompiler;
+use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 use Illuminate\Http\Request;
 
-class PageController extends \Pvtl\VoyagerPages\Http\Controllers\PageController
+class PageController extends VoyagerBaseController
 {
     use Breadcrumbs;
 
@@ -23,7 +24,10 @@ class PageController extends \Pvtl\VoyagerPages\Http\Controllers\PageController
      */
     public function getPage($slug = 'home')
     {
-        $view = parent::getPage($slug);
+
+        $pagetemp = Page::where(['slug' => $slug, 'status' => 'ACTIVE'])->firstOrFail();
+        $view = view("{$this->viewPath}::modules.pages.default", ['page' => $pagetemp]);
+
         $page = Page::findOrFail((int)$view->page->id);
 
         $view->layout = $page->layout;

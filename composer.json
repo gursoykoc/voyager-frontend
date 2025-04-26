@@ -17,7 +17,6 @@
     "minimum-stability": "stable",
     "require": {
         "laravel/framework": "^10.0",
-        "pvtl/voyager-pages": "dev-dev",
         "tcg/voyager": "^1.7",
         "teamtnt/laravel-scout-tntsearch-driver": "^12.0"
     },
@@ -26,12 +25,6 @@
         "orchestra/testbench": "^8.0",
         "illuminated/testing-tools": "^10.0"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/gursoykoc/voyager-pages"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "Pvtl\\VoyagerFrontend\\": "src/"

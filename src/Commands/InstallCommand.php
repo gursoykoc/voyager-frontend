@@ -92,10 +92,6 @@ class InstallCommand extends Command
         $process->setTimeout(null); // Setting timeout to null to prevent installation from stopping at a certain point in time
         $process->setWorkingDirectory(base_path())->mustRun();
 
-
-        // Database
-        $this->call('voyager-pages:install');
-
         $this->info('Successfully installed Voyager Frontend! Enjoy');
     }
 }
