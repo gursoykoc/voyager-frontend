@@ -96,12 +96,6 @@ class InstallCommand extends Command
         // Database
         $this->call('voyager-pages:install');
 
-        $this->info('Migrating the database tables into your application');
-        $this->call('migrate');
-
-        $this->info('Seeding data into the database');
-        $this->seed('VoyagerFrontendDatabaseSeeder');
-
         $this->info('Successfully installed Voyager Frontend! Enjoy');
     }
 }

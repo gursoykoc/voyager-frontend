@@ -37,7 +37,6 @@ class VoyagerFrontendServiceProvider extends ServiceProvider
         $this->strapPublishers();
         $this->strapViews($request);
         $this->strapHelpers();
-        $this->strapMigrations();
         $this->strapCommands();
     }
 
@@ -58,6 +57,8 @@ class VoyagerFrontendServiceProvider extends ServiceProvider
         $this->app->resolving('TCG\\Voyager\\Voyager', function ($voyager, $app) {
             $voyager->addFormField(FrontendLayout::class);
         });
+
+        $this->app->register(PagesEventServiceProvider::class);
     }
 
     /**
@@ -115,14 +116,6 @@ class VoyagerFrontendServiceProvider extends ServiceProvider
         require_once self::PACKAGE_DIR . '/src/Helpers/ImageResize.php';
     }
 
-    /**
-     * Bootstrap our Migrations
-     */
-    protected function strapMigrations()
-    {
-        // Migrations
-        $this->loadMigrationsFrom(self::PACKAGE_DIR . 'database/migrations');
-    }
 
     /**
      * Bootstrap our Commands/Schedules
